@@ -24,6 +24,7 @@ export class CommunicationsComponent implements OnInit {
 
   onItemAdded(description: string) {
     // this.todoList = [{ description, completed: false }, ...this.todoList];
+    this.service.addTodoItem(description);
   }
 
 }

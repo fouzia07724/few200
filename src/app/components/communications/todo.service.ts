@@ -2,7 +2,8 @@
 import { TodoItem } from './todo-list/models';
 import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs';
-
+import { map } from 'rxjs/operators';
+import { TodoDashboardSummary } from '../models';
 
 export class TodoService {
 
@@ -19,7 +20,24 @@ export class TodoService {
   }
   // 2. Allows you to add a todo.
 
+  addTodoItem(description: string) {
+    this.items = [{ description, completed: false }, ...this.items];
+    this.itemsSubject.next(this.items);
+  }
+
   // 3. Lets you get a summary for the dashboard.
+
+  getDashboardSummary(): Observable<TodoDashboardSummary> {
+    return this.itemsSubject.pipe(
+      map(todos => {
+        return {
+          totalTodos: todos.length,
+          incompleteTodos: todos.filter(t => t.completed === false).length,
+          completeTodos: todos.filter(t => t.completed).length
+        } as TodoDashboardSummary;
+      })
+    );
+  }
 
   // 4. Lets you mark one as complete.
 }
