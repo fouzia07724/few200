@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { AppState, selectCurrentcount, selectCountAtStart, selectCurrentCountBy } from 'src/app/reducers';
+import { AppState, selectCurrentCount, selectCountAtStart, selectCountingBy } from 'src/app/reducers';
 
 import * as actions from '../../actions/counter.actions';
 
@@ -19,9 +19,9 @@ export class CounterComponent implements OnInit {
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
-    this.current$ = this.store.select(selectCurrentcount);
+    this.current$ = this.store.select(selectCurrentCount);
     this.atStart$ = this.store.select(selectCountAtStart);
-    this.countBy$ = this.store.select(selectCurrentCountBy);
+    this.countBy$ = this.store.select(selectCountingBy);
 
   }
 
