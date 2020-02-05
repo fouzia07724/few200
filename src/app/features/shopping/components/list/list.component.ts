@@ -1,5 +1,9 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { ShoppingItemModel } from '../../model';
+import { ShoppingItemEntity } from '../../reducers/list.reducer';
+import { ShoppingState } from '../../reducers';
+import { Store } from '@ngrx/store';
+import { shoppingItemPurchased } from '../../actions/list.actions';
 
 
 @Component({
@@ -16,9 +20,16 @@ export class ListComponent implements OnInit {
   // ];
 
   @Input() model: ShoppingItemModel[];
-  constructor() { }
+  constructor(private store: Store<ShoppingState>) { }
 
   ngOnInit() {
   }
+
+  markPurchased(item: ShoppingItemEntity) {
+    this.store.dispatch(shoppingItemPurchased({ payload: item }));
+  }
+
+
+
 
 }

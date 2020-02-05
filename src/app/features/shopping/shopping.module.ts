@@ -6,12 +6,19 @@ import { ListComponent } from './components/list/list.component';
 import { StoreModule } from '@ngrx/store';
 import { featureName, reducers } from './reducers';
 
+// this one is for API hook up
+import { HttpClientModule } from '@angular/common/http';
+import { EffectsModule } from '@ngrx/effects';
+import { ListEffects } from './effects/list.effects';
+
 
 @NgModule({
   declarations: [ShoppingComponent, EntryComponent, ListComponent],
   imports: [
     CommonModule,
-    StoreModule.forFeature(featureName, reducers)
+    StoreModule.forFeature(featureName, reducers),
+    HttpClientModule,    // this one is for APi hook up
+    EffectsModule.forFeature([ListEffects]) // this is for effects hook up
   ],
   exports: [ShoppingComponent]
 })
