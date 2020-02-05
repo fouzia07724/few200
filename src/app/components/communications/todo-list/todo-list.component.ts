@@ -9,6 +9,8 @@ import { TodoItem } from './models';
 export class TodoListComponent implements OnInit {
 
   @Input() list: TodoItem[] = [];
+  header = 'Your Todo List'; // or @Input header = 'Your todo List' ;
+  // @Input() header = 'Your todo List';
 
   constructor() { }
 
