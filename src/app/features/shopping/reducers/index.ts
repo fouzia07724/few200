@@ -27,5 +27,6 @@ const { selectAll: selectAllListItem } = fromList.adapter.getSelectors(selectLis
 // TODO ShoppingItemModel[]
 export const selectShoppingItemModel = createSelector(selectAllListItem,
   // (items) => items as ShoppingItemModel[] // original one is this
+  // tslint:disable-next-line: max-line-length
   (items) => items.map(item => ({ ...item, isTemporary: item.id.toString().startsWith('T') } as ShoppingItemModel))  // this one added only if doing POST from APi
 );
