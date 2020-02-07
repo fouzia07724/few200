@@ -24,6 +24,6 @@ const { selectAll: selectAllListItem } = fromList.adapter.getSelectors(selectLis
 
 
 // TODO ShoppingItemModel[]
-export const selecShoppingItemModel = createSelector(selectAllListItem,
+export const selectBookItemModel = createSelector(selectAllListItem,
   (items) => items as BooklistItemModel[]
 );

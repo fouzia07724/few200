@@ -1,5 +1,6 @@
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
 import { createReducer, Action, on } from '@ngrx/store';
+import * as listActions from '../actions/list.actions';
 
 
 
@@ -19,8 +20,8 @@ export const adapter = createEntityAdapter<BooklistItemEntity>();
 const initialState: ListState = {
   ids: ['1', '2'],
   entities: {
-    1: { id: '1', description: 'Shampoo' },
-    2: { id: '2', description: 'Bread' }
+    1: { id: '1', description: 'Book A' },
+    2: { id: '2', description: 'Book B' }
   }
 };
 
