@@ -23,7 +23,7 @@ const { selectAll: selectAllListItem } = fromList.adapter.getSelectors(selectLis
 // 4.What the component needs
 
 
-// TODO ShoppingItemModel[]
+// TODO BookItemModel[]
 export const selectBookItemModel = createSelector(selectAllListItem,
   (items) => items as BooklistItemModel[]
 );

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { BooklistItemModel } from '../../model';
+import { BooklistState } from '../../reducers';
+import { Store } from '@ngrx/store';
 
 
 @Component({
@@ -16,7 +18,7 @@ export class ListComponent implements OnInit {
   // ];
   @Input() model: BooklistItemModel[];
 
-  constructor() { }
+  constructor(private store: Store<BooklistState>) { }
 
   ngOnInit() {
   }

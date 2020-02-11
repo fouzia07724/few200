@@ -14,3 +14,8 @@ export const bookItemAdded = createAction(
   })
 );
 
+export const bookListLoaded = createAction(
+  '[shopping list] shopping list loaded',
+  props<{ payload: BooklistItemEntity[] }>()
+);
+
