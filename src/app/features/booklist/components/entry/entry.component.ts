@@ -18,10 +18,12 @@ export class EntryComponent implements OnInit {
 
 
   // tslint:disable-next-line: align
-  addItem(bookTitle: HTMLInputElement, bookAuthor: HTMLInputElement, bookCover: HTMLInputElement) {
+  addItem(bookTitle: HTMLInputElement, bookAuthor: HTMLInputElement, bookCover: HTMLSelectElement) {
     const description = bookTitle.value;
     const author = bookAuthor.value;
-    const cover = bookCover.value;
+    const index = bookCover.selectedIndex;
+    const cover = bookCover.options[index].text;
+
     this.store.dispatch(bookItemAdded({ description, author, cover }));
     // todo Dispatch an action
     bookTitle.value = '';

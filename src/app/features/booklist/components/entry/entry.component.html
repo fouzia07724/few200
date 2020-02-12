@@ -20,6 +20,7 @@
     Book Cover
   </button>
   <div class="dropdown-menu"
+       #bookcovervalue
        aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item">HardCover</a>
     <a class="dropdown-item">PaperBack</a>
@@ -29,6 +30,15 @@
 <br />
 <br />
 <br />
+<label for="bookCovers">Choose a book cover:</label>
+<select id="bookCovers"
+        name="bookCovers"
+        #bookcovervalue>
+  <option value="HardCover">HardCover</option>
+  <option value="PaperBack">PaperBack</option>
+  <option value="E-Book">E-Book</option>
+
+</select>
 <br />
 <br />
 <br />
@@ -37,4 +47,4 @@
 <input type="button"
        class="btn btn-primary"
        value="Add Book"
-       (click)="addItem(description,author)">
+       (click)="addItem(description,author,bookcovervalue)">
