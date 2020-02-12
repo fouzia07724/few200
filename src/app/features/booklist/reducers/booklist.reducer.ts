@@ -10,6 +10,7 @@ export interface BooklistItemEntity {
   id: string;
   description: string;
   author: string;
+  cover: string;
 }
 
 export interface ListState extends EntityState<BooklistItemEntity> {
@@ -21,8 +22,8 @@ export const adapter = createEntityAdapter<BooklistItemEntity>();
 const initialState: ListState = {
   ids: ['1', '2'],
   entities: {
-    1: { id: '1', description: 'Book A', author: 'Haaris' },
-    2: { id: '2', description: 'Book B', author: 'Tariq' }
+    1: { id: '1', description: 'Book A', author: 'Haaris', cover: 'Hard' },
+    2: { id: '2', description: 'Book B', author: 'Tariq', cover: 'Hard' }
   }
 };
 

@@ -1,15 +1,40 @@
 <div class="form-group">
   <label for="item">Books To Add to the list</label>
   <input class="form-control"
-         name="item"
+         name="description"
          placeholder="Book Name"
-         #item>
+         #description>
   <input class="form-control"
-         name="item1"
+         name="author"
          placeholder="Author"
-         #item1>
-  <input type="button"
-         class="btn btn-primary"
-         value="Add Book"
-         (click)="addItem(item,item1)">
+         #author>
+
 </div>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+    Book Cover
+  </button>
+  <div class="dropdown-menu"
+       aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item">HardCover</a>
+    <a class="dropdown-item">PaperBack</a>
+    <a class="dropdown-item">E-Book</a>
+  </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+<input type="button"
+       class="btn btn-primary"
+       value="Add Book"
+       (click)="addItem(description,author)">

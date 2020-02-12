@@ -18,13 +18,15 @@ export class EntryComponent implements OnInit {
 
 
   // tslint:disable-next-line: align
-  addItem(descriptionEl: HTMLInputElement, descriptionEl1: HTMLInputElement) {
-    const description = descriptionEl.value;
-    const author = descriptionEl1.value;
-    this.store.dispatch(bookItemAdded({ description, author }));
+  addItem(bookTitle: HTMLInputElement, bookAuthor: HTMLInputElement, bookCover: HTMLInputElement) {
+    const description = bookTitle.value;
+    const author = bookAuthor.value;
+    const cover = bookCover.value;
+    this.store.dispatch(bookItemAdded({ description, author, cover }));
     // todo Dispatch an action
-    descriptionEl.value = '';
-    descriptionEl.focus();
+    bookTitle.value = '';
+    bookAuthor.value = '';
+    bookTitle.focus();
   }
 
 }
