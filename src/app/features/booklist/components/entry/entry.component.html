@@ -2,9 +2,14 @@
   <label for="item">Books To Add to the list</label>
   <input class="form-control"
          name="item"
+         placeholder="Book Name"
          #item>
+  <input class="form-control"
+         name="item1"
+         placeholder="Author"
+         #item1>
   <input type="button"
          class="btn btn-primary"
          value="Add Book"
-         (click)="addItem(item)">
+         (click)="addItem(item,item1)">
 </div>

@@ -5,9 +5,10 @@ let currentId = 99;
 
 export const bookItemAdded = createAction(
   '[book list] add item',
-  ({ description }: { description: string }) => ({
+  ({ description, author }: { description: string, author: string }) => ({
     payload: {
       description,
+      author,
       id: 'T' + currentId++,
       purchased: false
     }

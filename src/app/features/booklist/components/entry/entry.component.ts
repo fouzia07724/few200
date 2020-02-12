@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { BooklistState } from '../../reducers';
 import { Store } from '@ngrx/store';
 import { bookItemAdded } from '../../actions/list.actions';
@@ -10,6 +10,7 @@ import { bookItemAdded } from '../../actions/list.actions';
 })
 export class EntryComponent implements OnInit {
 
+
   constructor(private store: Store<BooklistState>) { }
 
   ngOnInit() {
@@ -17,9 +18,10 @@ export class EntryComponent implements OnInit {
 
 
   // tslint:disable-next-line: align
-  addItem(descriptionEl: HTMLInputElement) {
+  addItem(descriptionEl: HTMLInputElement, descriptionEl1: HTMLInputElement) {
     const description = descriptionEl.value;
-    this.store.dispatch(bookItemAdded({ description }));
+    const author = descriptionEl1.value;
+    this.store.dispatch(bookItemAdded({ description, author }));
     // todo Dispatch an action
     descriptionEl.value = '';
     descriptionEl.focus();
