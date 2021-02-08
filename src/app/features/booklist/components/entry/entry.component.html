@@ -1,13 +1,29 @@
 <div class="form-group">
-  <label for="item">Books To Add to the list</label>
+  <label for="item">Books To add to the list</label>
   <input class="form-control"
          name="description"
          placeholder="Book Name"
          #description>
+  <br />
   <input class="form-control"
          name="author"
          placeholder="Author"
          #author>
+  <br />
+
+  <select class="form-control"
+          name="bookCovers"
+          #bookcovervalue>
+    <option value="">Select Publication Format</option>
+    <option value="HardCover">HardCover</option>
+    <option value="PaperBack">PaperBack</option>
+    <option value="E-Book">E-Book</option>
+  </select>
+  <br />
+  <input type="button"
+         class="btn btn-primary margin-top"
+         value="Add Book"
+         (click)="addItem(description,author,bookcovervalue)">
 
 </div>
 <!--<div class="dropdown">
@@ -26,7 +42,7 @@
     <a class="dropdown-item">PaperBack</a>
     <a class="dropdown-item">E-Book</a>
   </div>
-</div> -->
+</div>
 <br />
 <label for="bookCovers">Choose a book cover:</label>
 <select id="bookCovers"
@@ -45,4 +61,4 @@
 <input type="button"
        class="btn btn-primary"
        value="Add Book"
-       (click)="addItem(description,author,bookcovervalue)">
+       (click)="addItem(description,author,bookcovervalue)"> -->
