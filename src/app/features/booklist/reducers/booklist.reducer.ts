@@ -29,7 +29,13 @@ const initialState: ListState = {
 
 const reducerFunction = createReducer(
   initialState,
-  on(listActions.bookItemAdded, (s, a) => adapter.addOne(a.payload, s))
+  on(listActions.bookItemAdded, (s, a) => adapter.addOne(a.payload, s)),
+  on(listActions.bookListLoaded, (s, a) => adapter.addAll(a.payload, s)),
+  on(listActions.bookAddedSuccessfully, (s, a) => {
+    const tempState = adapter.removeOne(a.oldId, s);
+    return adapter.addOne(a.payload, tempState);
+  })
+
 );
 
 export function reducer(state: ListState = initialState, action: Action) {

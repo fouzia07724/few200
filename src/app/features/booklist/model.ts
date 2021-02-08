@@ -3,4 +3,5 @@ export interface BooklistItemModel {
   description: string;
   author: string;
   cover: string;
+  title: string;
 }
